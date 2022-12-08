@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.payment.repository.PaymentRepository;
 import com.payment.paymententity.Payments;
 
-@RestController
+@Controller
 public class HomeController {
 
 	@Autowired
@@ -33,11 +33,11 @@ public class HomeController {
 	@GetMapping("/")
 	public String home(Model m) {
 
-		 List<Payments> list = paymentRepo.findAll(); 
+		/* List<Payments> list = paymentRepo.findAll();
 		 m.addAttribute("all_products", list);
-		 return "index";
+		 return "index";*/
 
-		//return findPaginateAndSorting(0,"id","asc", m);
+		return findPaginateAndSorting(0,"userId","asc", m);
 	}
 
 	@GetMapping("/page/{pageNo}")
